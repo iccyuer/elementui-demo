@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # elementui-demo
 
 > A Vue.js project
@@ -19,3 +20,6 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# elementui-demo
+>>>>>>> b217212465ddabe74fea8dc36057bbb00f0853af
