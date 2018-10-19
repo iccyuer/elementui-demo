@@ -12,10 +12,12 @@
     <button @click="judge">judge</button>
     <button @click="exec0">不能以0开头</button>
     <button @click="exec0">不能以0开头</button>
+    <button @click="ifif">if</button>
   </div>
 </template>
 
 <script>
+import unde from './test'
 let pic='haha';
 let hehe='area';
 export default {
@@ -81,6 +83,17 @@ export default {
     },
     exec0(){
       let reg=/^[^0]\w$/
+    },
+    ifif(){
+      // if(!client){
+      //   console.log('1');
+      // }else{
+      //   console.log('2');
+      // }
+      // unde.unde();
+      if(typeof(ad)==='undefined'){
+        console.log('asd');
+      }
     }
   }
 };
