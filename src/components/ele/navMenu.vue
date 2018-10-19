@@ -8,12 +8,18 @@ export default {
     return{
       routes:[
         {
-          name: '首页',
+          name: 'home',
           path: '/home',
-          hidden: true,
+          hidden: false,
           meta:{
-            
+            icon: 'home',
+            title: '首页'
           }
+        },
+        {
+          name: 'pic',
+          path: '/pic',
+          hidden
         }
       ]
     }
