@@ -35,7 +35,15 @@ import s2 from '@/components/store/s2'
 import s3 from '@/components/store/s3'
 
 import floatTabTest from '@/components/me/floatTabTest'
-import test from '@/components/me/test'
+// import test from '@/components/me/test'
+const test1 = import('@/components/me/test').then(m => m.default || m)
+const test2 = () => import('@/components/me/test').then(m => m.default || m)
+// console.log(test1);
+// console.log(test2);
+
+const promise = () => import('@/components/me/promise').then(m => m.default || m)
+const cutting = () => import('@/components/me/cutting').then(m => m.default || m)
+
 
 Vue.use(Router)
 
@@ -90,7 +98,9 @@ export default new Router({
     {path:'/me',name:'me',component:{template: '<router-view></router-view>'},
       children:[
         {path:'/me/floattabtest',name:'floattabtest',component:floatTabTest},
-        {path:'/me/test',name:'test',component:test},
+        {path:'/me/test',name:'test',component:test2},
+        {path:'/me/promise',name:'promise',component:promise},
+        {path:'/me/cutting',name:'cutting',component:cutting},
       ]
     },
 
