@@ -12,6 +12,10 @@ import Child from './components/Slot';
 import Child2 from './components/Slot2';
 import SlotParent from './components/SlotParent';
 import VueResource from 'vue-resource';
+
+import '@/assets/fonts/iconfont.css'
+import 'lib-flexible/flexible';
+
 Vue.use(VueResource);
 
 Vue.config.productionTip = false
@@ -24,6 +28,12 @@ Vue.component(Child.name,Child);
 
 import  { AlertPlugin } from 'vux'
 Vue.use(AlertPlugin)
+
+import { ConfigPlugin } from 'vux'
+
+Vue.use(ConfigPlugin, {
+  $layout: 'VIEW_BOX'
+})
 
 /* eslint-disable no-new */
 new Vue({

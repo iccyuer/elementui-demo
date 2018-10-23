@@ -28,6 +28,7 @@ import dateFormat from '@/components/vux/dateFormat'
 import actionSheet from '@/components/vux/actionSheet'
 import alert from '@/components/vux/alert'
 import viewBox from '@/components/vux/viewBox'
+import modal from '@/components/vux/modal'
 
 
 import s1 from '@/components/store/s1'
@@ -38,12 +39,15 @@ import s3 from '@/components/store/s3'
 import floatTabTest from '@/components/me/floatTabTest'
 // import test from '@/components/me/test'
 const test1 = import('@/components/me/test').then(m => m.default || m)
-const test2 = () => import('@/components/me/test').then(m => m.default || m)
+// const test2 = () => import('@/components/me/test').then(m => m.default || m)
 // console.log(test1);
 // console.log(test2);
 const promise = () => import('@/components/me/promise').then(m => m.default || m)
 const cutting = () => import('@/components/me/cutting').then(m => m.default || m)
 const watch = () => import('@/components/me/watch').then(m => m.default || m)
+const iconfont = () => import('@/components/me/iconfont').then(m => m.default || m)
+const test2 = () => import('@/components/me/test2').then(m => m.default || m)
+const flexible = () => import('@/components/me/flexible').then(m => m.default || m)
 
 
 const navMenu = () => import('@/components/ele/navMenu').then(m => m.default || m)
@@ -88,6 +92,7 @@ export default new Router({
         {path:'/vux/actionsheet',name:'actionsheet',component:actionSheet},
         {path:'/vux/alert',name:'alert',component:alert},
         {path:'/vux/viewbox',name:'viewBox',component:viewBox},
+        {path:'/vux/modal',name:'modal',component:modal},
       ]
     },
 
@@ -106,6 +111,9 @@ export default new Router({
         {path:'/me/promise',name:'promise',component:promise},
         {path:'/me/cutting',name:'cutting',component:cutting},
         {path:'/me/watch',name:'watch',component:watch},
+        {path:'/me/iconfont',name:'iconfont',component:iconfont},
+        {path:'/me/test2',name:'test2',component:test2},
+        {path:'/me/flexible',name:'flexible',component:flexible},
       ]
     },
 

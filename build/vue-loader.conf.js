@@ -18,5 +18,11 @@ module.exports = {
     source: 'src',
     img: 'src',
     image: 'xlink:href'
-  }
+  },
+  postcss: [
+    require('postcss-plugin-px2rem')({
+      rootValue: 64,
+      selectorBlackList: ["scroller-"]
+    })
+  ]
 }

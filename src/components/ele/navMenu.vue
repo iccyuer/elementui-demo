@@ -9,6 +9,7 @@
              active-text-color="#409EFF">
         <sidebar-item :routes="routers"></sidebar-item>
       </el-menu>
+      <br>
       
       <el-menu
       default-active="1"
@@ -19,10 +20,13 @@
       active-text-color="#ffd04b">
       <el-submenu index="1" class="23">
         <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>导航一</span>
+          
+           <i class="el-icon-location"></i>导航一
+         <span>导航一</span>
         </template>
-        <el-menu-item index="1-1">选项1</el-menu-item>
+        <router-link to="">
+          <el-menu-item index="1-1">选项1</el-menu-item>
+        </router-link>
         <el-menu-item index="1-2">选项2</el-menu-item>     
         <el-menu-item index="1-3">选项3</el-menu-item>
         <el-submenu index="1-4">
@@ -30,18 +34,27 @@
           <el-menu-item index="1-4-1">选项1</el-menu-item>
         </el-submenu>
       </el-submenu>
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span>导航二</span>
-      </el-menu-item>
-      <el-menu-item index="3" disabled>
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item>
+
+      <router-link to="">
+        <el-menu-item index="2">
+          <i class="el-icon-menu"></i>
+          <span>导航二</span>
+        </el-menu-item>
+      </router-link>
+
+      <router-link to="">
+        <el-menu-item index="3">
+          <i class="el-icon-document"></i>
+          <span>导航三</span>
+        </el-menu-item>
+      </router-link>
+
+      <!-- <router-link to=""> -->
+        <el-menu-item index="4">
+          <i class="el-icon-setting"></i>dfdsf
+          <!-- <span>导航四</span> -->
+        </el-menu-item>
+      <!-- </router-link> -->
     </el-menu>
     
     </div>
@@ -154,7 +167,7 @@ export default {
 
 <style lang="scss" scoped>
   .slider{
-    width: 180px;
+    width: 200px;
     height: 100%;
     position: fixed;
     .el-menu{

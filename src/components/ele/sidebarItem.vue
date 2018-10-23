@@ -58,5 +58,11 @@
       margin-right: 16px;
     }
   }
+  .el-menu-item{
+    .el-icon {
+      font-size: 16px;
+      margin-right: 16px;
+    }
+  }
 </style>
 
