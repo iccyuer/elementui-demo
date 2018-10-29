@@ -4,6 +4,7 @@
     <br> <br>
     <div style="width:100%;height:40px;background:pink"></div>
     <br>
+    <router-link to="/me/test2">test2</router-link>
     <float-tab
       scroll-box="container"
       :offset="0">

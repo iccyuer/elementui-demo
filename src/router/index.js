@@ -38,7 +38,7 @@ import s3 from '@/components/store/s3'
 
 import floatTabTest from '@/components/me/floatTabTest'
 // import test from '@/components/me/test'
-const test1 = import('@/components/me/test').then(m => m.default || m)
+const test = () => import('@/components/me/test').then(m => m.default || m)
 // const test2 = () => import('@/components/me/test').then(m => m.default || m)
 // console.log(test1);
 // console.log(test2);
@@ -47,7 +47,9 @@ const cutting = () => import('@/components/me/cutting').then(m => m.default || m
 const watch = () => import('@/components/me/watch').then(m => m.default || m)
 const iconfont = () => import('@/components/me/iconfont').then(m => m.default || m)
 const test2 = () => import('@/components/me/test2').then(m => m.default || m)
+const test3 = () => import('@/components/me/test3').then(m => m.default || m)
 const flexible = () => import('@/components/me/flexible').then(m => m.default || m)
+const select = () => import('@/components/me/select').then(m => m.default || m)
 
 
 const navMenu = () => import('@/components/ele/navMenu').then(m => m.default || m)
@@ -80,7 +82,6 @@ export default new Router({
     {path:'/app/home/withdraw',name:'pull3',component:pull},
     {path:'/scroll',name:'scroll',component:scroll},
     {path:'/dian9',name:'dian9',component:dian9},
-    {path:'/dian9',name:'dian9',component:dian9},
     {path:'/form',name:'form',component:form},
     {path:'/toform',name:'toForm',component:toForm},
 
@@ -107,13 +108,15 @@ export default new Router({
     {path:'/me',name:'me',component:{template: '<router-view></router-view>'},
       children:[
         {path:'/me/floattabtest',name:'floattabtest',component:floatTabTest},
-        {path:'/me/test',name:'test',component:test2},
+        {path:'/me/test',name:'test',component:test},
         {path:'/me/promise',name:'promise',component:promise},
         {path:'/me/cutting',name:'cutting',component:cutting},
         {path:'/me/watch',name:'watch',component:watch},
         {path:'/me/iconfont',name:'iconfont',component:iconfont},
         {path:'/me/test2',name:'test2',component:test2},
+        {path:'/me/test3',name:'test3',component:test3},
         {path:'/me/flexible',name:'flexible',component:flexible},
+        {path:'/me/select',name:'select',component:select},
       ]
     },
 

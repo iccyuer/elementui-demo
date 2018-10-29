@@ -13,7 +13,12 @@ state: {
 },
 getters: {
   resultNums: state => {
-    return state.nums.filter(num => num > 2);
+    // return state.nums.filter(num => num > 2);
+    return state.nums.filter(num => {
+      if(num == 3){
+        return 'asdas'
+      }
+    })
   },
   resultNumsLength: (state, getters) => {
     return getters.resultNums.length;
