@@ -19,6 +19,9 @@
       <div>姓名：</div>
       <div>身份证号：</div>
     </div>
+    <button @click="for1">for</button>
+    <button @click="san">san</button>
+    <p>{{color}}</p>
   </div>
 </template>
 
@@ -40,7 +43,9 @@ export default {
         "DO(溶解氧)",
         "高锰酸盐指数",
         "DO(溶解氧)"
-      ]
+      ],
+      sans:0,
+      color:''
     };
   },
   methods: {
@@ -117,6 +122,22 @@ export default {
       // this.vbus.$emit('userNotLogin');
       console.log(this);
       console.log(this.$el);
+    },
+    for1(){
+      let arr = [1,2,3,4,5];
+      let a = '';
+      for(let i of arr){
+        if(i === 3){
+          break;
+        }else{
+          a = i; 
+        }
+        console.log('aaa');
+      }
+    },
+    san(){
+      // this.sans = !this.sans;
+      this.color = this.sans?'#38a9f4':'#999999';
     }
   }
 };

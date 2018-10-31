@@ -1,25 +1,20 @@
+<template>
+  <render :ele="ele"></render>
+</template>
 
 
 <script>
+import render from './render';
 export default {
   /*
     
-
   */
-  render(createElement){
-    return createElement('el-button',{
-      'class':{
-        'ab':true,
-        'cb':false
-      },
-      domProps:{
-        innerHTML:'btn'
-      }
-    })
+  components:{
+    render
   },
   data() {
     return {
-
+      ele:'el-button'
     };
   }
 };

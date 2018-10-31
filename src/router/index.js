@@ -50,10 +50,18 @@ const test2 = () => import('@/components/me/test2').then(m => m.default || m)
 const test3 = () => import('@/components/me/test3').then(m => m.default || m)
 const flexible = () => import('@/components/me/flexible').then(m => m.default || m)
 const select = () => import('@/components/me/select').then(m => m.default || m)
+const flex = () => import('@/components/me/flex').then(m => m.default || m)
+const lotteryTest = () => import('@/components/me/lottery/lotteryTest').then(m => m.default || m)
+
+const out = () => import('@/components/me/comm/out').then(m => m.default || m)
 
 
 const navMenu = () => import('@/components/ele/navMenu').then(m => m.default || m)
+const messageBox = () => import('@/components/ele/messageBox').then(m => m.default || m)
+const forms = () => import('@/components/ele/form').then(m => m.default || m)
 
+
+const sc1 = () => import('@/components/scss/sc1').then(m => m.default || m)
 
 Vue.use(Router)
 
@@ -117,14 +125,34 @@ export default new Router({
         {path:'/me/test3',name:'test3',component:test3},
         {path:'/me/flexible',name:'flexible',component:flexible},
         {path:'/me/select',name:'select',component:select},
+        {path:'/me/flex',name:'flex',component:flex},
+
+        {path:'comm',name:'comm',component:{template: '<router-view></router-view>'},
+          children:[
+            {path:'out',name:'out',component:out},
+          ]
+        },
+        {path:'lottery',name:'lottery',component:{template: '<router-view></router-view>'},
+        children:[
+          {path:'lotterytest',name:'lotterytest',component:lotteryTest},
+        ]
+      }
       ]
     },
 
     {path:'/ele',name:'ele',component:{template: '<router-view></router-view>'},
       children:[
         {path:'/ele/navmenu',name:'navMenu',component:navMenu},
+        {path:'/ele/messagebox',name:'messageBox',component:messageBox},
+        {path:'/ele/form',name:'form',component:forms},
       ]
     },
+
+    {path:'/scss',name:'scss',component:{template: '<router-view></router-view>'},
+    children:[
+      {path:'sc1',name:'sc1',component:sc1},
+    ]
+  },
 
   ]
 })

@@ -20,8 +20,9 @@
       active-text-color="#ffd04b">
       <el-submenu index="1" class="23">
         <template slot="title">
-          
-           <i class="el-icon-location"></i>导航一
+
+           <i class="el-icon-location"></i>
+           <!-- <span>导航一</span> -->
          <span>导航一</span>
         </template>
         <router-link to="">
