@@ -6,6 +6,7 @@
     <button @click="get">get</button>
     <button @click="extend">...</button>
     <button @click="change" :class="btnClass">change</button>
+    <button @click="arr" :class="btnClass">arr</button>
   </div>
 </template>
 
@@ -22,7 +23,18 @@ export default {
       btnClass:{
         blue:true,
         gray:false,
-      }
+      },
+      rawArr:[
+        {
+          isToDay:1,
+        },
+        {
+          isToDay:2,
+        },
+        {
+          isToDay:3,
+        },
+      ]
     };
   },
   methods: {
@@ -47,6 +59,10 @@ export default {
     },
     change() {
       this.btnClass.gray = !this.btnClass.gray;
+    },
+    arr(){
+      let result = this.rawArr.filter(item => item.isToDay===1);
+      console.log(result);
     }
   }
 };
