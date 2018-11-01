@@ -46,7 +46,7 @@ export default {
         "DO(溶解氧)"
       ],
       sans:0,
-      color:''
+      color:'',
       colorChange: false,
       btnClass:{
         blue:true,

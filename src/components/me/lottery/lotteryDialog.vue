@@ -1,8 +1,7 @@
 <template>
   <div v-transfer-dom>
     <x-dialog
-      v-model="dialogVisible"
-      hide-on-blur>
+      v-model="dialogVisible">
         <div class="coupons-content">
           <div class="close-icon" @click="close">
             <img src="../../../assets/img/ico-close.png" alt="">
@@ -17,7 +16,12 @@
             </div>
           </div>
           <div class="prize-body" v-if="prizeInfo.type === 'coupon'">
-            <img src="../../../assets/img/coupons-pic.png" alt="">
+            <div class="pic-coupon pict">
+              <p>
+                <span>{{prizeInfo.count*100}}%</span> <br>
+                <span>加息券</span>
+              </p>
+            </div>
             <div class="time">
               <span>有效期:2018-10-31至2018-11-30</span>
             </div>
@@ -29,8 +33,13 @@
             </div>
           </div>
           <div class="prize-body" v-else>
-            <img src="../../../assets/img/integral-pic.png" alt="">
-            <div class="btn-use" v-if="isOldUser" @click="toIntegralIndex">
+            <div class="pic-integral pict">
+              <p>
+                <span>{{prizeInfo.count}}</span> <br>
+                <span>积分</span>
+              </p>
+            </div>
+            <div class="btn-use" v-if="isOldUser" >
               <span>前往兑换礼品</span>
             </div>
           </div>
@@ -55,7 +64,7 @@ export default {
     },
     prizeInfo:{
       type: Object,
-      required:true
+      required: true
     }
   },
   data() {
@@ -78,9 +87,9 @@ export default {
 $imgUrl: "../../../assets/img/";
 
 .weui-dialog {
-  max-width: 160px;
+  max-width: 460px;
   width: 460px;
-  height: 470px;
+  height: 100px;
   overflow: visible;
   text-align: left;
   color: #fff;
@@ -142,6 +151,27 @@ $imgUrl: "../../../assets/img/";
     text-align: center;
     position: relative;
     z-index: 8;
+    .pic-coupon {
+      background: url($imgUrl+'coupons-pic.png') no-repeat center
+    }
+    .pic-integral {
+      background: url($imgUrl+'integral-pic.png') no-repeat center
+    }
+    .pict {
+      width: 214px;
+      height: 134px;
+      background-size: 100%;
+      display: inline-block;
+      margin-bottom: 20px;
+      position: relative;
+      > p{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        font-size: 30px;
+      }
+    }
     img {
       width: 214px;
       height: 134px;

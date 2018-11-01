@@ -2,6 +2,7 @@
   <div>
     <lottery
       :prizeList="list"
+      :lotteryType="1"
       @lotteryResult="lotteryResult"
     ></lottery>
     <lottery-dialog 
@@ -34,13 +35,13 @@ export default {
   },
   methods:{
     lotteryResult(prizeId){
-      console.log(prizeId);
-      list.some(val => {
+      this.list.some(val => {
         if(val.id === prizeId){
           this.info = {
             type: val.type,
             count: val.point || val.rate
           }
+          return;
         }
       });
       this.$refs['lotteryDialog'].open();

@@ -2,7 +2,7 @@
   <div class="wheel">
     <div class="wheel-main">
       <div class="wheel-pointer-box">
-        <div class="wheel-pointer" :style="">
+        <div class="wheel-pointer" :style="{transform:point_angle,transition:point_transition}">
           <div class="pointer-real" @click="rotate_handle"></div>
         </div>
       </div>
@@ -42,9 +42,14 @@ export default {
   },
   data() {
     return {
+      //转动转盘参数
       rotate_angle: 0,
       start_rotating_degree: 0,
       rotate_transition: "transform 3s ease-in-out",
+      //转动指针参数
+      point_angle: 0,
+      start_pointing_degree: 0,
+      point_transition: "transform 3s ease-in-out",
       click_flag: true,
       prizeListD: [
         { id: "323", type: "integral", point: 100, order: 6 },
@@ -71,27 +76,35 @@ export default {
         switch (index) {
           case 0:
             prize.degree = 337.5;
+            prize.degreeP = 22.5;
             break;
           case 1:
             prize.degree = 292.5;
+            prize.degreeP = 67.5;
             break;
           case 2:
             prize.degree = 247.5;
+            prize.degreeP = 112.5;
             break;
           case 3:
             prize.degree = 202.5;
+            prize.degreeP = 157.5;
             break;
           case 4:
             prize.degree = 157.5;
+            prize.degreeP = 202.5;
             break;
           case 5:
             prize.degree = 112.5;
+            prize.degreeP = 247.5;
             break;
           case 6:
             prize.degree = 67.5;
+            prize.degreeP = 292.5;
             break;
           case 7:
             prize.degree = 22.5;
+            prize.degreeP = 337.5;
             break;
         }
         resultData.push(prize);
@@ -125,16 +138,16 @@ export default {
       let prize_random_id = this.orderPrizeList[random].prize_id;
       let prize_result_id = prizeId || prize_random_id;
       let result_angle = "";
-      this.orderPrizeList.some(val => {
-        if(val.prize_id === prize_random_id){
-          result_angle = val["degree"];
-          return;
-        }
-      })
       let rand_circle = 5; // 附加多转几圈，2-3
       this.click_flag = false; // 旋转结束前，不允许再次触发
       if (this.lotteryType === 0) {
         // 转动盘子
+        this.orderPrizeList.some(val => {
+          if(val.prize_id === prize_random_id){
+            result_angle = val["degree"];
+            return;
+          }
+        })
         let rotate_angle =
           this.start_rotating_degree +
           rand_circle * 360 +
@@ -145,11 +158,28 @@ export default {
         // 旋转结束后，允许再次触发
         setTimeout(() => {
           this.click_flag = true;
-          console.log('ads',prize_result_id)
           this.$emit('lotteryResult',prize_result_id)
         }, during_time * 1000 + 300); // 延时，保证转盘转完
       } else {
         //转动指针
+        this.orderPrizeList.some(val => {
+          if(val.prize_id === prize_random_id){
+            result_angle = val["degreeP"];
+            return;
+          }
+        })
+        let point_angle =
+          this.start_pointing_degree +
+          rand_circle * 360 +
+          result_angle -
+          (this.start_pointing_degree % 360);
+          this.start_pointing_degree = point_angle;
+          this.point_angle = "rotate(" + point_angle + "deg)";
+          // 旋转结束后，允许再次触发
+          setTimeout(() => {
+            this.click_flag = true;
+            this.$emit('lotteryResult',prize_result_id)
+          }, during_time * 1000 + 300); // 延时，保证转盘转完
       }
     }
   }
@@ -170,7 +200,7 @@ $imgUrl: '../../../assets/img/';
     top: 50%;
     left: 50%;
     z-index: 10;
-    transform: translate(-51%, -58%);
+    transform: translate(-51%, -57%);
     width: 212px;
     height: 212px;
     .wheel-pointer {
