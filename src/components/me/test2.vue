@@ -22,6 +22,7 @@
     <button @click="for1">for</button>
     <button @click="san">san</button>
     <p>{{color}}</p>
+    <button @click="change" :class="btnClass">change</button>
   </div>
 </template>
 
@@ -46,6 +47,11 @@ export default {
       ],
       sans:0,
       color:''
+      colorChange: false,
+      btnClass:{
+        blue:true,
+        gray:false,
+      }
     };
   },
   methods: {
@@ -138,7 +144,25 @@ export default {
     san(){
       // this.sans = !this.sans;
       this.color = this.sans?'#38a9f4':'#999999';
+    },
+    extend() {
+      let arr1 = [1, 2, 3, 4];
+      this.list = [...this.list, ...arr1];
+    },
+    change() {
+      this.btnClass.gray = !this.btnClass.gray;
     }
   }
 };
 </script>
+
+<style lang="scss">
+.gray {
+  border: 1px solid gray !important;
+  color: gray !important;
+}
+.blue {
+  border: 1px solid #2f6ec0 !important;
+  color: #2f6ec0;
+}
+</style>
