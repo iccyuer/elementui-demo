@@ -23,6 +23,7 @@
     <button @click="san">san</button>
     <p>{{color}}</p>
     <button @click="change" :class="btnClass">change</button>
+    <button @canplay="calc">calc</button>
   </div>
 </template>
 
@@ -45,12 +46,12 @@ export default {
         "高锰酸盐指数",
         "DO(溶解氧)"
       ],
-      sans:0,
-      color:'',
+      sans: 0,
+      color: "",
       colorChange: false,
-      btnClass:{
-        blue:true,
-        gray:false,
+      btnClass: {
+        blue: true,
+        gray: false
       }
     };
   },
@@ -101,16 +102,16 @@ export default {
       ];
       // return;
       let json = {};
-      rawArr.map( item => {
-        if(!json[item]) json[item] = 1;
+      rawArr.map(item => {
+        if (!json[item]) json[item] = 1;
         else json[item] += 1;
-      })
+      });
       let resultArr = [];
-      for(let item in json){
+      for (let item in json) {
         let ele = {
           name: item,
           count: json[item]
-        }
+        };
         resultArr.push(ele);
       }
       console.log(resultArr);
@@ -129,21 +130,21 @@ export default {
       console.log(this);
       console.log(this.$el);
     },
-    for1(){
-      let arr = [1,2,3,4,5];
-      let a = '';
-      for(let i of arr){
-        if(i === 3){
+    for1() {
+      let arr = [1, 2, 3, 4, 5];
+      let a = "";
+      for (let i of arr) {
+        if (i === 3) {
           break;
-        }else{
-          a = i; 
+        } else {
+          a = i;
         }
-        console.log('aaa');
+        console.log("aaa");
       }
     },
-    san(){
+    san() {
       // this.sans = !this.sans;
-      this.color = this.sans?'#38a9f4':'#999999';
+      this.color = this.sans ? "#38a9f4" : "#999999";
     },
     extend() {
       let arr1 = [1, 2, 3, 4];
@@ -151,6 +152,14 @@ export default {
     },
     change() {
       this.btnClass.gray = !this.btnClass.gray;
+    },
+    calc() {
+      function calculate(capital, rate, year) {
+        if (!year) return capital;
+        const amount = capital * rate + capital;
+        calculate(amount, rate, year - 1);
+      }
+      console.log(calculate(10000, 0.1, 10));
     }
   }
 };

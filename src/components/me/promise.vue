@@ -2,6 +2,7 @@
   <div>
     <button @click="go">go</button>
     <button @click="go1">go1</button>
+    <button @click="go2">go2</button>
   </div>
 </template>
 
@@ -28,6 +29,21 @@ export default {
         })
       }
       console.log(app);
+    },
+    p() {
+      return new Promise((resolve,reject) => {
+        setTimeout(() => {
+          resolve('3000');
+        }, 3000);
+        setTimeout(() => {
+          resolve('5000');
+        }, 5000);
+      })
+    },
+    go2(){
+      this.p().then(res => {
+        console.log(res);
+      })
     }
   }
 }

@@ -48,12 +48,17 @@ const watch = () => import('@/components/me/watch').then(m => m.default || m)
 const iconfont = () => import('@/components/me/iconfont').then(m => m.default || m)
 const test2 = () => import('@/components/me/test2').then(m => m.default || m)
 const test3 = () => import('@/components/me/test3').then(m => m.default || m)
+const test4 = () => import('@/components/me/test4').then(m => m.default || m)
 const flexible = () => import('@/components/me/flexible').then(m => m.default || m)
 const select = () => import('@/components/me/select').then(m => m.default || m)
 const flex = () => import('@/components/me/flex').then(m => m.default || m)
+const auth = () => import('@/components/me/auth').then(m => m.default || m)
+
 const lotteryTest = () => import('@/components/me/lottery/lotteryTest').then(m => m.default || m)
 
 const out = () => import('@/components/me/comm/out').then(m => m.default || m)
+
+const dia = () => import('@/components/me/dialog/index').then(m => m.default || m)
 
 
 const navMenu = () => import('@/components/ele/navMenu').then(m => m.default || m)
@@ -66,7 +71,7 @@ const sc1 = () => import('@/components/scss/sc1').then(m => m.default || m)
 Vue.use(Router)
 
 export default new Router({
-  // mode:'history',
+  mode:'history',
   base:'/',
   routes: [
     // {
@@ -123,9 +128,11 @@ export default new Router({
         {path:'/me/iconfont',name:'iconfont',component:iconfont},
         {path:'/me/test2',name:'test2',component:test2},
         {path:'/me/test3',name:'test3',component:test3},
+        {path:'/me/test4',name:'test4',component:test4},
         {path:'/me/flexible',name:'flexible',component:flexible},
         {path:'/me/select',name:'select',component:select},
         {path:'/me/flex',name:'flex',component:flex},
+        {path:'/me/auth',name:'auth',component:auth},
 
         {path:'comm',name:'comm',component:{template: '<router-view></router-view>'},
           children:[
@@ -133,10 +140,15 @@ export default new Router({
           ]
         },
         {path:'lottery',name:'lottery',component:{template: '<router-view></router-view>'},
+          children:[
+            {path:'lotterytest',name:'lotterytest',component:lotteryTest},
+          ]
+        },
+        {path:'dialog',name:'dialog',component:{template: '<router-view></router-view>'},
         children:[
-          {path:'lotterytest',name:'lotterytest',component:lotteryTest},
+          {path:'dia',name:'dia',component:dia},
         ]
-      }
+      },
       ]
     },
 
