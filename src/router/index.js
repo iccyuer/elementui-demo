@@ -59,6 +59,8 @@ const out = () => import('@/components/me/comm/out').then(m => m.default || m)
 const navMenu = () => import('@/components/ele/navMenu').then(m => m.default || m)
 const messageBox = () => import('@/components/ele/messageBox').then(m => m.default || m)
 const forms = () => import('@/components/ele/form').then(m => m.default || m)
+const input = () => import('@/components/ele/input').then(m => m.default || m)
+const time = () => import('@/components/ele/time').then(m => m.default || m)
 
 
 const sc1 = () => import('@/components/scss/sc1').then(m => m.default || m)
@@ -145,6 +147,8 @@ export default new Router({
         {path:'/ele/navmenu',name:'navMenu',component:navMenu},
         {path:'/ele/messagebox',name:'messageBox',component:messageBox},
         {path:'/ele/form',name:'form',component:forms},
+        {path:'/ele/input',name:'input',component:input},
+        {path:'/ele/time',name:'time',component:time},
       ]
     },
 
