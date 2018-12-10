@@ -58,8 +58,9 @@ const lotteryTest = () => import('@/components/me/lottery/lotteryTest').then(m =
 
 const out = () => import('@/components/me/comm/out').then(m => m.default || m)
 
-const dia = () => import('@/components/me/dialog/index').then(m => m.default || m)
+const dia = () => import('@/components/me/dialog/dia').then(m => m.default || m)
 
+const slideIndex = () => import('@/components/me/slide/index').then(m => m.default || m)
 
 const navMenu = () => import('@/components/ele/navMenu').then(m => m.default || m)
 const messageBox = () => import('@/components/ele/messageBox').then(m => m.default || m)
@@ -79,7 +80,8 @@ export default new Router({
     //   name: 'HelloWorld',
     //   component: HelloWorld
     // }
-    {path:'/',name:'Table',component:Table},
+    {path:'/',redirect: '/table'},
+    {path:'/table',name:'Table',component:Table},
     {path:'/table2',name:'Table',component:Table2},
     {path:'/slot',name:'Table',component:SlotParent},
     {path:'/tabs',name:'Tabs',component:Tabs},
@@ -145,10 +147,15 @@ export default new Router({
           ]
         },
         {path:'dialog',name:'dialog',component:{template: '<router-view></router-view>'},
-        children:[
-          {path:'dia',name:'dia',component:dia},
-        ]
-      },
+          children:[
+            {path:'dia',name:'dia',component:dia},
+          ]
+        },
+        {path:'slide',name:'slide',component:{template: '<router-view></router-view>'},
+          children:[
+            {path:'index',name:'index',component:slideIndex},
+          ]
+        },
       ]
     },
 

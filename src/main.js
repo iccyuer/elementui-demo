@@ -45,6 +45,15 @@ Vue.use(ConfigPlugin, {
   $layout: 'VIEW_BOX'
 })
 
+router.beforeEach((to, from, next) => {
+  console.log(to);
+  // if (to.path === '/me/auth') {
+  //   location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxc63718bce6132657&redirect_uri=http://192.168.0.90:8085/me/auth&response_type=code&scope=snsapi_userinfo&state=abcdefghigklmnopqrstuvwxyz#wechat_redirect';
+  //   // next();
+  // }
+  next();
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
