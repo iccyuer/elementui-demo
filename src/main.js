@@ -25,6 +25,15 @@ Vue.config.productionTip = false
 
 Vue.prototype.$axios = axios;
 
+import Mint from 'mint-ui'; 
+Vue.use(Mint);
+import 'mint-ui/lib/style.css'
+
+//uiv
+import 'bootstrap/dist/css/bootstrap.min.css'
+import * as uiv from 'uiv'
+Vue.use(uiv)
+
 Vue.use(ElementUI);
 Vue.component(Child.name,Child);
 // Vue.component(Child2.name,Child2);

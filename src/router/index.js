@@ -53,6 +53,9 @@ const flexible = () => import('@/components/me/flexible').then(m => m.default ||
 const select = () => import('@/components/me/select').then(m => m.default || m)
 const flex = () => import('@/components/me/flex').then(m => m.default || m)
 const auth = () => import('@/components/me/auth').then(m => m.default || m)
+const style1 = () => import('@/components/me/style_1').then(m => m.default || m)
+const style2 = () => import('@/components/me/style_2').then(m => m.default || m)
+const px12 = () => import('@/components/me/px12').then(m => m.default || m)
 
 const lotteryTest = () => import('@/components/me/lottery/lotteryTest').then(m => m.default || m)
 
@@ -65,9 +68,13 @@ const slideIndex = () => import('@/components/me/slide/index').then(m => m.defau
 const navMenu = () => import('@/components/ele/navMenu').then(m => m.default || m)
 const messageBox = () => import('@/components/ele/messageBox').then(m => m.default || m)
 const forms = () => import('@/components/ele/form').then(m => m.default || m)
+const commonDia = () => import('@/components/ele/commonDia').then(m => m.default || m)
 
+const cellSwipe = () => import('@/components/mint/cellSwipe').then(m => m.default || m)
 
 const sc1 = () => import('@/components/scss/sc1').then(m => m.default || m)
+
+const tooltip = () => import('@/components/uiv/tooltip').then(m => m.default || m)
 
 Vue.use(Router)
 
@@ -82,8 +89,8 @@ export default new Router({
     // }
     {path:'/',redirect: '/table'},
     {path:'/table',name:'Table',component:Table},
-    {path:'/table2',name:'Table',component:Table2},
-    {path:'/slot',name:'Table',component:SlotParent},
+    {path:'/table2',name:'Table2',component:Table2},
+    {path:'/slot',name:'Table3',component:SlotParent},
     {path:'/tabs',name:'Tabs',component:Tabs},
     {path:'/Test',name:'Test',component:Test},
     {path:'/Wechat',name:'Wechat',component:Wechat},
@@ -135,6 +142,9 @@ export default new Router({
         {path:'/me/select',name:'select',component:select},
         {path:'/me/flex',name:'flex',component:flex},
         {path:'/me/auth',name:'auth',component:auth},
+        {path:'/me/style1',name:'style1',component:style1},
+        {path:'/me/style2',name:'style2',component:style2},
+        {path:'/me/px12',name:'px12',component:px12},
 
         {path:'comm',name:'comm',component:{template: '<router-view></router-view>'},
           children:[
@@ -163,15 +173,25 @@ export default new Router({
       children:[
         {path:'/ele/navmenu',name:'navMenu',component:navMenu},
         {path:'/ele/messagebox',name:'messageBox',component:messageBox},
-        {path:'/ele/form',name:'form',component:forms},
+        {path:'/ele/form',name:'ele_form',component:forms},
+        {path:'/ele/dia',name:'ele_dia',component:commonDia},
+      ]
+    },
+    {path:'/mint',name:'mint',component:{template: '<router-view></router-view>'},
+      children:[
+        {path:'/mint/cellSwipe',name:'cellSwipe',component:cellSwipe},
       ]
     },
 
     {path:'/scss',name:'scss',component:{template: '<router-view></router-view>'},
-    children:[
-      {path:'sc1',name:'sc1',component:sc1},
-    ]
-  },
-
+      children:[
+        {path:'sc1',name:'sc1',component:sc1},
+      ]
+    },
+    {path:'/uiv',name:'uiv',component:{template: '<router-view></router-view>'},
+      children:[
+        {path:'tooltip',name:'tooltip',component:tooltip},
+      ]
+    },
   ]
 })
