@@ -76,6 +76,8 @@ const sc1 = () => import('@/components/scss/sc1').then(m => m.default || m)
 
 const tooltip = () => import('@/components/uiv/tooltip').then(m => m.default || m)
 
+const passvalue = () => import('@/components/me/passValue/index').then(m => m.default || m)
+
 Vue.use(Router)
 
 export default new Router({
@@ -164,6 +166,11 @@ export default new Router({
         {path:'slide',name:'slide',component:{template: '<router-view></router-view>'},
           children:[
             {path:'index',name:'index',component:slideIndex},
+          ]
+        },
+        {path:'passvalue',name:'passvalue',component:{template: '<router-view></router-view>'},
+          children:[
+            {path:'index',name:'index',component:passvalue},
           ]
         },
       ]

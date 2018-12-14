@@ -20,13 +20,15 @@ export default {
       tabConfig:[
         { id: 60, description: '品质生活<br/>&<br/>时尚3C' },
         { id: 62, description: '坦克世界' },
-        { id: 28, description: '战舰世界<br/>pp' },
+        { id: 28, description: '战舰世界<br/>k' },
         { id: 90, description: '激战2' },
+        { id: 90, description: '激战0' }
       ]
     }
   },
   computed: {
-    activityIds() {
+    activityIds(val) {
+      console.log(val)
       let arr = [];
       this.tabConfig.forEach((val, index) => {
         arr.push(val.id);
@@ -37,6 +39,7 @@ export default {
   methods: {
     changeItems(id, index) {
       this.currentItem = index
+      this.activityIds = '2'
     },
   }
 }
