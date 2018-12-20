@@ -48,6 +48,9 @@ export default {
 </script>
 
 <style lang="scss">
+*{
+  animation: dialog-fade-in 10s linear;
+}
 @keyframes dialog-fade-in {
   0% {
     transform: translate3d(0, 100%, 0);

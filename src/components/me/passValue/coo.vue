@@ -9,10 +9,21 @@ export default {
 
     }
   },
+  props: {
+    initConfig: {
+      type: Function,
+      default() {
+        console.log('defaultA')
+      }
+    }
+  },
   methods:{
     defaultA() {
       console.log('defaultA')
     }
+  },
+  mounted() {
+    this.$emit('coo-mounted')
   }
 }
 </script>

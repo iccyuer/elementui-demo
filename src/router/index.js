@@ -49,6 +49,7 @@ const iconfont = () => import('@/components/me/iconfont').then(m => m.default ||
 const test2 = () => import('@/components/me/test2').then(m => m.default || m)
 const test3 = () => import('@/components/me/test3').then(m => m.default || m)
 const test4 = () => import('@/components/me/test4').then(m => m.default || m)
+const test5 = () => import('@/components/me/test5').then(m => m.default || m)
 const flexible = () => import('@/components/me/flexible').then(m => m.default || m)
 const select = () => import('@/components/me/select').then(m => m.default || m)
 const flex = () => import('@/components/me/flex').then(m => m.default || m)
@@ -140,6 +141,7 @@ export default new Router({
         {path:'/me/test2',name:'test2',component:test2},
         {path:'/me/test3',name:'test3',component:test3},
         {path:'/me/test4',name:'test4',component:test4},
+        {path:'/me/test5',name:'test5',component:test5},
         {path:'/me/flexible',name:'flexible',component:flexible},
         {path:'/me/select',name:'select',component:select},
         {path:'/me/flex',name:'flex',component:flex},

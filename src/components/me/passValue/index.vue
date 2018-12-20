@@ -5,22 +5,28 @@
     :beforeClick="beforeClick" 
     :afterClick="afterClick"
     ref="cookie">
-      <coo ref="coo"></coo>
+      <!-- <coo ref="coo" :initConfig="init" slot-scope="data" @coo-mounted="coo-mounted"></coo> -->
+      <coo1 ref="coo1"></coo1>
     </cookie>
   </div>
 </template>
 
 <script>
-import cookie from './cookie'
+import cookie from './cookie' 
 import coo from './coo'
+const coo1 = () => import('./coo').then(m => m.default || m)
 export default {
   components: {
-    cookie, coo
+    cookie, coo, coo1
   },
   methods:{
     open() {
       this.$refs['cookie'].handleOpen()
-      this.$refs['coo'].defaultA()
+      // this.$refs['coo'].defaultA()
+      this.$refs['coo1'].defaultA()
+    },
+    init() {
+      console.log('ttf')
     },
     beforeClick(resolve,reject){
       setTimeout(()=>{
@@ -31,7 +37,7 @@ export default {
     afterClick(){
       console.log('after-click');
     }
-},
+  }
 }
 </script>
 
