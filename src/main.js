@@ -6,15 +6,17 @@ import router from './router'
 import axios from 'axios'
 import store from './components/store/store'
 import './permission'
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+
 
 import Child from './components/Slot';
 import Child2 from './components/Slot2';
 import SlotParent from './components/SlotParent';
 import VueResource from 'vue-resource';
 
+// iconfont
 import '@/assets/fonts/iconfont.css'
+
+// 只适应插件
 import 'lib-flexible/flexible';
 
 Vue.prototype.vbus = new Vue();
@@ -25,18 +27,30 @@ Vue.config.productionTip = false
 
 Vue.prototype.$axios = axios;
 
+// vant
+import 'vant/lib/index.css'
+import Vant from 'vant';
+Vue.use(Vant);
+
+// mint
 import Mint from 'mint-ui'; 
 Vue.use(Mint);
 import 'mint-ui/lib/style.css'
 
-//uiv
+// uiv
 import 'bootstrap/dist/css/bootstrap.min.css'
 import * as uiv from 'uiv'
 Vue.use(uiv)
 
+// element-ui
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
+
 Vue.component(Child.name,Child);
 // Vue.component(Child2.name,Child2);
+
+// meta
 import Meta from 'vue-meta'
 Vue.use(Meta, {
   keyName: 'metaInfo', // the component option name that vue-meta looks for meta info on.

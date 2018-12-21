@@ -77,6 +77,8 @@ const sc1 = () => import('@/components/scss/sc1').then(m => m.default || m)
 
 const tooltip = () => import('@/components/uiv/tooltip').then(m => m.default || m)
 
+const vant_modal = () => import('@/components/vant/index').then(m => m.default || m)
+
 const passvalue = () => import('@/components/me/passValue/index').then(m => m.default || m)
 
 Vue.use(Router)
@@ -200,6 +202,11 @@ export default new Router({
     {path:'/uiv',name:'uiv',component:{template: '<router-view></router-view>'},
       children:[
         {path:'tooltip',name:'tooltip',component:tooltip},
+      ]
+    },
+    {path:'/vant',name:'vant',component:{template: '<router-view></router-view>'},
+      children:[
+        {path:'modal',name:'modal',component:vant_modal},
       ]
     },
   ]

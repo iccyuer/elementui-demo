@@ -5,7 +5,7 @@
     </div>
     <hr>
     <div v-for="(item, index) in op.data" :key="item">
-      <span>{{item}}</span>  <button @click="del(op, index)">del</button> 
+      <span>{{item}}</span>  <button @click="op.del(index)">del</button> 
     </div>
   </div>
 </template>
@@ -17,14 +17,14 @@ export default {
       arr: [1, 2, 3, 4, 5],
       op: {
         data: [6, 7, 8, 9, 10],
-        del(obj, idx) {
-          if (!obj.data) return;
+        del(idx) {
+          console.log(this);
+          if (!this.data) return;
           let l = [];
-          obj.data.forEach((val, index) => {
+          this.data.forEach((val, index) => {
             if (index !== idx) l.push(val)
           });
-          obj.data = l;
-          console.log(obj.data);
+          this.data = l;
         }
       }
     }

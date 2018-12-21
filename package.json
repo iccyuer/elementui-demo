@@ -14,6 +14,7 @@
     "element-ui": "^2.4.6",
     "mint-ui": "^2.2.13",
     "uiv": "^0.28.0",
+    "vant": "^1.5.0-beta2",
     "vue": "^2.5.2",
     "vue-cropper": "^0.4.6",
     "vue-infinite-loading": "^2.3.3",
