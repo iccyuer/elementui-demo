@@ -56,7 +56,10 @@ const flex = () => import('@/components/me/flex').then(m => m.default || m)
 const auth = () => import('@/components/me/auth').then(m => m.default || m)
 const style1 = () => import('@/components/me/style_1').then(m => m.default || m)
 const style2 = () => import('@/components/me/style_2').then(m => m.default || m)
+const style3 = () => import('@/components/me/style_3').then(m => m.default || m)
 const px12 = () => import('@/components/me/px12').then(m => m.default || m)
+const edit = () => import('@/components/me/edit').then(m => m.default || m)
+const backTop = () => import('@/components/me/back-top/index').then(m => m.default || m)
 
 const lotteryTest = () => import('@/components/me/lottery/lotteryTest').then(m => m.default || m)
 
@@ -150,7 +153,10 @@ export default new Router({
         {path:'/me/auth',name:'auth',component:auth},
         {path:'/me/style1',name:'style1',component:style1},
         {path:'/me/style2',name:'style2',component:style2},
+        {path:'/me/style3',name:'style3',component:style3},
         {path:'/me/px12',name:'px12',component:px12},
+        {path:'/me/edit',name:'edit',component:edit},
+        {path:'/me/back_top',name:'backTop',component:backTop},
 
         {path:'comm',name:'comm',component:{template: '<router-view></router-view>'},
           children:[
