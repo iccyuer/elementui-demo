@@ -1,7 +1,9 @@
 <template>
-  <div class="act-back-top" v-show="backTop" @click="backToTop">
+  <transition name="slide-fade">
+    <div class="act-back-top" v-show="backTop" @click="backToTop">
     <img src="../../../assets/img/ico-top.png" alt="">
   </div>
+  </transition> 
 </template>
 <script>
 export default {
@@ -72,9 +74,21 @@ export default {
     right: 33px;
     box-sizing: border-box;
     z-index: 99;
+    transition: all .8s ease;
     img {
       width: 100%;
       height: 100%;
     }
+  }
+  @mixin private-transform ($paramX: 0%, $paramY: 0%){
+    transform: translate($paramX, $paramY);
+    -webkit-transform: translate($paramX, $paramY);
+    -moz-transform: translate($paramX, $paramY);
+    -o-transform: translate($paramX, $paramY);
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active for below version 2.1.8 */ {
+    @include private-transform(0, 70px);
+    opacity: 0;
   }
 </style>
