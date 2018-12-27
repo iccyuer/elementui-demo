@@ -2,7 +2,7 @@
   <div>
     <el-dialog
       :visible.sync="showDisDia"
-      width="100%"
+      width="50%"
       lock-scroll
       @open="openDialog"
       @opened="openDialog2"
@@ -11,6 +11,12 @@
       :close-on-click-modal="true"
       class="dia-dead-line">
       <h1>wakak</h1>
+      <el-form>
+        <el-form-item label="超长文本" class="too-long">
+          <span>{{tooLongText}}</span>
+        </el-form-item>
+      </el-form>
+      <p class="too">{{tooLongText}}</p>
       <button @click="closeSelf">121</button>
     </el-dialog>
     <button @click="openDia">openDia</button>
@@ -21,7 +27,8 @@
 export default {
   data () {
     return {
-      showDisDia: false
+      showDisDia: false,
+      tooLongText: 'abcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefg'
     }
   },
   methods: {
@@ -49,7 +56,7 @@ export default {
 
 <style lang="scss">
 *{
-  animation: dialog-fade-in 10s linear;
+  // animation: dialog-fade-in 0.4s linear;
 }
 @keyframes dialog-fade-in {
   0% {
@@ -71,4 +78,20 @@ export default {
     opacity: 0;
   }
 }
+.el-dialog__body{
+  .too-long{
+    span{
+      display: inline-block;
+      width: 80px;
+      word-wrap:break-word;
+      // overflow: hidden;
+    }
+  }
+  .too{
+    display: inline-block;
+    width: 80px;
+    word-wrap:break-word;
+  }
+}
+
 </style>

@@ -16,10 +16,11 @@ import VueResource from 'vue-resource';
 // iconfont
 import '@/assets/fonts/iconfont.css'
 
-// 只适应插件
+// 自适应插件
 import 'lib-flexible/flexible';
 
 Vue.prototype.vbus = new Vue();
+// GLOBAL.vbus = new Vue();
 
 Vue.use(VueResource);
 

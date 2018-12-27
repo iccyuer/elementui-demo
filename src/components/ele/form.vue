@@ -33,6 +33,9 @@
           </el-upload>
       </el-form-item>
 
+      <el-form-item label="超长文本" class="too-long">
+        <p>{{tooLongText}}</p>
+      </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
         <el-button @click="resetForm('ruleForm')">重置</el-button>
@@ -45,6 +48,7 @@
 export default {
   data(){
     return{
+      tooLongText: `abcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefgabcdefg`,
       value6:'',
       value5:'',
       ruleForm:{
@@ -110,6 +114,15 @@ export default {
   .replace-input{
     input{
       display: none;
+    }
+  }
+  .too-long{
+    p{
+      width: 500px;
+      height: 200px;
+      // overflow: hidden;
+      white-space: pre-wrap;
+      // text-overflow: ellipsis;
     }
   }
 </style>

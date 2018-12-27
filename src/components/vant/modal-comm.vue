@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- 规则弹窗 -->
     <rule-modal
       ref="rule-modal">
       </rule-modal>

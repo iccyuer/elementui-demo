@@ -1,15 +1,16 @@
 <template>
   <div>
-    <div v-if="show">
+    <div v-if="false">
       <el-button type="primary" @click="toggle">主要按钮</el-button>
       <slot></slot>
     </div>
-    <div v-if="false">
+    <div v-if="true">
       <el-dialog
         title="提示"
         :visible.sync="show"
         width="30%">
         <span>这是一段信息</span>
+        <button @click="changeList">changeList</button>
         <slot :todo="show"></slot>
         <span slot="footer" class="dialog-footer">
           <el-button @click="show = false">取 消</el-button>
@@ -29,6 +30,10 @@ export default {
     }
   },
   props: {
+    list: {
+      type: Array,
+      default: []
+    },
     beforeClick: {
       type: Function,
       default() {
@@ -43,6 +48,10 @@ export default {
     }
   },
   methods: {
+    changeList() {
+      // this.list = [1,3]
+      this.$emit('update:list', [1, 2, 3])
+    },
     handleOpen() {
       this.show = true
       // this.$slots.default[0].componentInstance.defaultA()
@@ -77,7 +86,7 @@ export default {
     }
   },
   mounted() {
-    console.log('mounted')
+    console.log('cookie-mounted')
   }
 }
 </script>
