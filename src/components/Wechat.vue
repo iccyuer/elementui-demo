@@ -10,7 +10,8 @@
         <button @click="getToken">通过code换取网页授权access_token和openid</button>  <br> <br>
         <button @click="getTokenNow">获取现有access_token</button>  <br> <br>
         <button @click="getUserInfo">通过access_token获取用户信息</button> <br> <br>
-        <button @click="getUserInfoByCode">直接通过code获取用户信息</button>
+        <button @click="getUserInfoByCode">直接通过code获取用户信息</button> <br>
+        <button @click="serverAuth">serverAuth</button>
     </div>
 </template>
 
@@ -322,6 +323,24 @@ export default {
           console.log(err);
         }
       );
+    },
+    serverAuth() {
+      // axios
+      //   .get("http://192.168.0.90:3000/oauth", {
+      //     params: {
+      //       appid: this.appid,
+      //       secret: "d0270196b514f856fe636091f1730b43",
+      //       code: this.code,
+      //       grant_type: "authorization_code"
+      //     }
+      //   })
+      //   .then((response)=> {
+      //     console.log(response);
+      //   })
+      //   .catch(function(error) {
+      //     console.log(error);
+      //   });
+      location.href = 'http://192.168.0.90:3000/oauth'
     }
   },
   mounted() {
@@ -331,7 +350,7 @@ export default {
   },
   created(){
     // alert('created');
-    this.getSignature();
+    // this.getSignature();
     window.onfocus=function(){
       console.log('focus');
     }
