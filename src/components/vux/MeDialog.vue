@@ -6,7 +6,7 @@
     >
       <div class="container">
         <div class="close-icon">
-          <img src="../../assets/close-ico.png" alt="">
+          <img src="../../assets/close-ico.png" alt="" @click="showDialog = false">
         </div>
         <div class="newwork-err">
           <div class="err-body">

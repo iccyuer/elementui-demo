@@ -82,6 +82,8 @@ const tooltip = () => import('@/components/uiv/tooltip').then(m => m.default || 
 
 const vant_modal = () => import('@/components/vant/index').then(m => m.default || m)
 
+const dialog_1 = () => import('@/components/dialog_1/index').then(m => m.default || m)
+
 const passvalue = () => import('@/components/me/passValue/index').then(m => m.default || m)
 
 Vue.use(Router)
@@ -213,6 +215,11 @@ export default new Router({
     {path:'/vant',name:'vant',component:{template: '<router-view></router-view>'},
       children:[
         {path:'modal',name:'modal',component:vant_modal},
+      ]
+    },
+    {path:'/dialog_1',name:'dialog_1',component:{template: '<router-view></router-view>'},
+      children:[
+        {path:'index',name:'dialog_1_index',component:dialog_1},
       ]
     },
   ]

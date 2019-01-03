@@ -53,12 +53,13 @@ export default {
     z-index: 1000;
   }
   &-container {
-    width: 100%;
-    height: 100%;
+    // width: 100%;
+    // height: 100%;
     position: fixed;
     color: red;
     z-index: 5000;
     text-align: center;
+    top: 0;
     .body{
       width: 200px;
       height: 200px;
