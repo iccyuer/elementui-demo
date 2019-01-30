@@ -9,7 +9,7 @@
         title="提示"
         :visible.sync="show"
         width="30%">
-        <span>这是一段信息</span>
+        <span>{{list}}</span>
         <button @click="changeList">changeList</button>
         <slot :todo="show"></slot>
         <span slot="footer" class="dialog-footer">
@@ -49,8 +49,8 @@ export default {
   },
   methods: {
     changeList() {
-      // this.list = [1,3]
-      this.$emit('update:list', [1, 2, 3])
+      this.list = [1,3]
+      // this.$emit('update:list', [1, 2, 3])
     },
     handleOpen() {
       this.show = true

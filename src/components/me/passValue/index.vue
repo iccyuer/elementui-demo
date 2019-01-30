@@ -4,7 +4,7 @@
     <cookie
     :beforeClick="beforeClick" 
     :afterClick="afterClick"
-    :list.sync="listData"
+    :list="listData"
     ref="cookie">
       <!-- <coo ref="coo" :initConfig="init" slot-scope="data" @coo-mounted="coo-mounted"></coo> -->
       <coo1 ref="coo1"></coo1>
@@ -32,7 +32,7 @@ export default {
       // this.$refs['coo1'].defaultA()
       // this.$root.$emit('defaultB')
       // GLOBAL.vbus.$emit('defaultB')
-      console.log(GLOBAL.vbus)
+      // console.log(GLOBAL.vbus)
     },
     init() {
       console.log('ttf')
