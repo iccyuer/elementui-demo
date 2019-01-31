@@ -5,14 +5,17 @@
         <span v-text="props.item"></span>
       </template>
     </scroller>
+    <barrage></barrage> 
   </div>
 </template>
 
 <script>
 import scroller from './index'
+import barrage from './barrage'
 export default {
   components: {
-    scroller
+    scroller,
+    barrage
   },
   data() {
     return {

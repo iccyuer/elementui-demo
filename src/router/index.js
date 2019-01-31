@@ -74,11 +74,13 @@ const slideIndex = () => import('@/components/me/slide/index').then(m => m.defau
 
 const infiniteMe = () => import('@/components/me/infinite-rolling/index').then(m => m.default || m)
 const infiniteTest = () => import('@/components/me/infinite-rolling/test').then(m => m.default || m)
+const barrage1 = () => import('@/components/me/infinite-rolling/barrage1').then(m => m.default || m)
 
 const navMenu = () => import('@/components/ele/navMenu').then(m => m.default || m)
 const messageBox = () => import('@/components/ele/messageBox').then(m => m.default || m)
 const forms = () => import('@/components/ele/form').then(m => m.default || m)
 const commonDia = () => import('@/components/ele/commonDia').then(m => m.default || m)
+const tabview = () => import('@/components/ele/tabview/index').then(m => m.default || m)
 
 const cellSwipe = () => import('@/components/mint/cellSwipe').then(m => m.default || m)
 
@@ -198,6 +200,7 @@ export default new Router({
           children:[
             {path:'index',name:'index',component:infiniteMe},
             {path:'test',name:'test1',component:infiniteTest},
+            {path:'barrage1',name:'barrage1',component:barrage1},
           ]
         },
       ]
@@ -209,6 +212,7 @@ export default new Router({
         {path:'/ele/messagebox',name:'messageBox',component:messageBox},
         {path:'/ele/form',name:'ele_form',component:forms},
         {path:'/ele/dia',name:'ele_dia',component:commonDia},
+        {path:'/ele/tabview',name:'tabview',component:tabview},
       ]
     },
     {path:'/mint',name:'mint',component:{template: '<router-view></router-view>'},
