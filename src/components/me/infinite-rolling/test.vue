@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="aa">
     <scroller class="wa" :list=list>
       <template slot-scope="props">
         <span v-text="props.item"></span>
@@ -26,7 +26,11 @@ export default {
 </script>
 
 <style lang="scss">
+  .aa{
+    height: 100%;
+  }
   .wa{
     // width: 200px;
+    // height: 100%;
   }
 </style>
