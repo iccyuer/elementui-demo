@@ -14,7 +14,7 @@
                 <button @click="getScope(scope)">click me</button>  
             </template>
             <!-- slot-scope vue2.5版本中取代了scope,使用会出现警告 -->
-            <template slot="footer" scope="scope1">
+            <template slot="footer" slot-scope="scope1">
                 <h3>我是footer-slot</h3>
                 {{scope1}}
                 <li v-for="val in scope1.datan">{{val}}</li>

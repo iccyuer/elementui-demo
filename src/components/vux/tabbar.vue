@@ -37,7 +37,7 @@
       <!-- col：行，2.6之前使用rows，cols:列，当行和列冲突，以列为准 -->
       <grid :col="2" :cols="3">
         <!-- icon使用线上地址，使用本地资源需使用slot=icon保证资源被正确打包 -->
-        <grid-item label="Grid" v-for="i in 9" icon="https://tb1.bdstatic.com/tb/%E5%8C%97%E4%BA%AC1.jpg">
+        <grid-item label="Grid" v-for="i in 9" icon="https://tb1.bdstatic.com/tb/%E5%8C%97%E4%BA%AC1.jpg" :key="i">
           <img slot="icon" src="../../assets/close-ico.png">
           <div slot=label>grid!</div>
         </grid-item>

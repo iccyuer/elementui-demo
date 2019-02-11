@@ -49,26 +49,42 @@ const iconfont = () => import('@/components/me/iconfont').then(m => m.default ||
 const test2 = () => import('@/components/me/test2').then(m => m.default || m)
 const test3 = () => import('@/components/me/test3').then(m => m.default || m)
 const test4 = () => import('@/components/me/test4').then(m => m.default || m)
+const test5 = () => import('@/components/me/test5').then(m => m.default || m)
 const flexible = () => import('@/components/me/flexible').then(m => m.default || m)
 const select = () => import('@/components/me/select').then(m => m.default || m)
 const flex = () => import('@/components/me/flex').then(m => m.default || m)
 const auth = () => import('@/components/me/auth').then(m => m.default || m)
+const style1 = () => import('@/components/me/style_1').then(m => m.default || m)
+const style2 = () => import('@/components/me/style_2').then(m => m.default || m)
+const style3 = () => import('@/components/me/style_3').then(m => m.default || m)
+const px12 = () => import('@/components/me/px12').then(m => m.default || m)
+const edit = () => import('@/components/me/edit').then(m => m.default || m)
+const backTop = () => import('@/components/me/back-top/index').then(m => m.default || m)
 
 const lotteryTest = () => import('@/components/me/lottery/lotteryTest').then(m => m.default || m)
 
 const out = () => import('@/components/me/comm/out').then(m => m.default || m)
 
-const dia = () => import('@/components/me/dialog/index').then(m => m.default || m)
+const dia = () => import('@/components/me/dialog/dia').then(m => m.default || m)
 
+const slideIndex = () => import('@/components/me/slide/index').then(m => m.default || m)
 
 const navMenu = () => import('@/components/ele/navMenu').then(m => m.default || m)
 const messageBox = () => import('@/components/ele/messageBox').then(m => m.default || m)
 const forms = () => import('@/components/ele/form').then(m => m.default || m)
 const input = () => import('@/components/ele/input').then(m => m.default || m)
 const time = () => import('@/components/ele/time').then(m => m.default || m)
+const commonDia = () => import('@/components/ele/commonDia').then(m => m.default || m)
 
+const cellSwipe = () => import('@/components/mint/cellSwipe').then(m => m.default || m)
 
 const sc1 = () => import('@/components/scss/sc1').then(m => m.default || m)
+
+const tooltip = () => import('@/components/uiv/tooltip').then(m => m.default || m)
+
+const vant_modal = () => import('@/components/vant/index').then(m => m.default || m)
+
+const passvalue = () => import('@/components/me/passValue/index').then(m => m.default || m)
 
 Vue.use(Router)
 
@@ -81,9 +97,10 @@ export default new Router({
     //   name: 'HelloWorld',
     //   component: HelloWorld
     // }
-    {path:'/',name:'Table',component:Table},
-    {path:'/table2',name:'Table',component:Table2},
-    {path:'/slot',name:'Table',component:SlotParent},
+    {path:'/',redirect: '/table'},
+    {path:'/table',name:'Table',component:Table},
+    {path:'/table2',name:'Table2',component:Table2},
+    {path:'/slot',name:'Table3',component:SlotParent},
     {path:'/tabs',name:'Tabs',component:Tabs},
     {path:'/Test',name:'Test',component:Test},
     {path:'/Wechat',name:'Wechat',component:Wechat},
@@ -131,10 +148,17 @@ export default new Router({
         {path:'/me/test2',name:'test2',component:test2},
         {path:'/me/test3',name:'test3',component:test3},
         {path:'/me/test4',name:'test4',component:test4},
+        {path:'/me/test5',name:'test5',component:test5},
         {path:'/me/flexible',name:'flexible',component:flexible},
         {path:'/me/select',name:'select',component:select},
         {path:'/me/flex',name:'flex',component:flex},
         {path:'/me/auth',name:'auth',component:auth},
+        {path:'/me/style1',name:'style1',component:style1},
+        {path:'/me/style2',name:'style2',component:style2},
+        {path:'/me/style3',name:'style3',component:style3},
+        {path:'/me/px12',name:'px12',component:px12},
+        {path:'/me/edit',name:'edit',component:edit},
+        {path:'/me/back_top',name:'backTop',component:backTop},
 
         {path:'comm',name:'comm',component:{template: '<router-view></router-view>'},
           children:[
@@ -147,10 +171,20 @@ export default new Router({
           ]
         },
         {path:'dialog',name:'dialog',component:{template: '<router-view></router-view>'},
-        children:[
-          {path:'dia',name:'dia',component:dia},
-        ]
-      },
+          children:[
+            {path:'dia',name:'dia',component:dia},
+          ]
+        },
+        {path:'slide',name:'slide',component:{template: '<router-view></router-view>'},
+          children:[
+            {path:'index',name:'index',component:slideIndex},
+          ]
+        },
+        {path:'passvalue',name:'passvalue',component:{template: '<router-view></router-view>'},
+          children:[
+            {path:'index',name:'index',component:passvalue},
+          ]
+        },
       ]
     },
 
@@ -161,14 +195,30 @@ export default new Router({
         {path:'/ele/form',name:'form',component:forms},
         {path:'/ele/input',name:'input',component:input},
         {path:'/ele/time',name:'time',component:time},
+        {path:'/ele/form',name:'ele_form',component:forms},
+        {path:'/ele/dia',name:'ele_dia',component:commonDia},
+      ]
+    },
+    {path:'/mint',name:'mint',component:{template: '<router-view></router-view>'},
+      children:[
+        {path:'/mint/cellSwipe',name:'cellSwipe',component:cellSwipe},
       ]
     },
 
     {path:'/scss',name:'scss',component:{template: '<router-view></router-view>'},
-    children:[
-      {path:'sc1',name:'sc1',component:sc1},
-    ]
-  },
-
+      children:[
+        {path:'sc1',name:'sc1',component:sc1},
+      ]
+    },
+    {path:'/uiv',name:'uiv',component:{template: '<router-view></router-view>'},
+      children:[
+        {path:'tooltip',name:'tooltip',component:tooltip},
+      ]
+    },
+    {path:'/vant',name:'vant',component:{template: '<router-view></router-view>'},
+      children:[
+        {path:'modal',name:'modal',component:vant_modal},
+      ]
+    },
   ]
 })

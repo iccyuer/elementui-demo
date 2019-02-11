@@ -4,18 +4,69 @@
     <button @click="serverAuth" class="">serverAuth</button>
     <button @click="test">test</button>
     <button @click="url">url</button>
+    <button @click="webAuth">webAuth</button>  <br>  <br>
+    <button @click="serverAuth" class="">serverAuth</button> <br> <br>
+    <button @click="create">create</button>
+
+    <button @click="test">test</button>  <br>
+    <input type="text" ref="input">
   </div>
 </template>
 
 <script>
+import axios from "axios";
+import wx from 'weixin-js-sdk';
+import { setTimeout, setInterval } from 'timers';
 export default {
   data(){
     return{
     }
   },
   methods:{
+    webAuth() {
+      this.$router.push('/me/test2')
+    },
     serverAuth() {
-      location.href = 'http://192.168.0.90:3000/oauth'
+      // location.href = 'http://www.baidu.com';
+      location.href = 'http://192.168.0.90:3000/oauth';
+      // console.log(window);
+      setInterval(() => {
+        console.log(1);
+        wx.closeWindow();
+      },200)
+      // setTimeout(() => {
+      //   console.log(window);
+      // }, 500);
+      return;
+      axios
+        .get("http://192.168.0.90:3000/oauth", {
+          params: {
+            // appid: this.appid,
+            // secret: "d0270196b514f856fe636091f1730b43",
+            // code: this.code,
+            // grant_type: "authorization_code"
+          }
+        })
+        .then((response)=> {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    create() {
+            axios
+        .get("http://192.168.0.90:3000/create", {
+          params: {
+            url:location.href
+          }
+        })
+        .then((response)=> {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     },
     test() {
       let query = this.$route.query;
@@ -27,7 +78,13 @@ export default {
       url = encodeURIComponent(url);
       console.log(url);
       'http%3A%2F%2F192.168.43.197%3A8085%2Fme%2Fauth%3Finvite%3D333sss%26op%3D9isd3hs9'
+      alert(query.code+'--'+query.state);
+      console.log(location.href);
+      console.log(query);
     }
+  },
+  beforeCreate() {
+    // location.href = 'http://192.168.0.90:3000/oauth';
   },
   created() {
     let query = this.$route.query;
@@ -37,6 +94,15 @@ export default {
   },
   mounted() {
     // alert('mounted');
+    alert('created');
+    // location.href = 'http://192.168.0.90:3000/oauth';
+  },
+  mounted() {
+    alert('mounted');
+    this.$refs['input'].focus();
+    // location.href = 'http://192.168.0.90:3000/oauth';
+    // console.log(window);
+
   },
   beforeRouteEnter (to, from, next) {
     next(vm => {
