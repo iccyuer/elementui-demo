@@ -51,6 +51,10 @@ Vue.use(ElementUI);
 Vue.component(Child.name,Child);
 // Vue.component(Child2.name,Child2);
 
+// xx
+import scroll from 'vue-seamless-scroll'
+Vue.use(scroll)
+
 // meta
 import Meta from 'vue-meta'
 Vue.use(Meta, {

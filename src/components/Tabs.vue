@@ -15,7 +15,8 @@
     },
     methods: {
       handleClick(tab, event) {
-        console.log(tab, event);
+        console.log(tab.index)
+        // this.sCtypes = tab.index;
       }
     }
   };

@@ -1,5 +1,7 @@
 <template>
   <div>
+    <button @click="show = true">show</button>
+    <li v-for="i in 200" v-html="i"></li>
     <dialog-m v-model="show">
       <div class="rule">
         <div class="close-icon">

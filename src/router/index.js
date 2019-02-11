@@ -57,8 +57,11 @@ const auth = () => import('@/components/me/auth').then(m => m.default || m)
 const style1 = () => import('@/components/me/style_1').then(m => m.default || m)
 const style2 = () => import('@/components/me/style_2').then(m => m.default || m)
 const style3 = () => import('@/components/me/style_3').then(m => m.default || m)
+const style4 = () => import('@/components/me/style_4').then(m => m.default || m)
 const px12 = () => import('@/components/me/px12').then(m => m.default || m)
 const edit = () => import('@/components/me/edit').then(m => m.default || m)
+const share = () => import('@/components/me/share').then(m => m.default || m)
+
 const backTop = () => import('@/components/me/back-top/index').then(m => m.default || m)
 
 const lotteryTest = () => import('@/components/me/lottery/lotteryTest').then(m => m.default || m)
@@ -69,12 +72,17 @@ const dia = () => import('@/components/me/dialog/dia').then(m => m.default || m)
 
 const slideIndex = () => import('@/components/me/slide/index').then(m => m.default || m)
 
+const infiniteMe = () => import('@/components/me/infinite-rolling/index').then(m => m.default || m)
+const infiniteTest = () => import('@/components/me/infinite-rolling/test').then(m => m.default || m)
+const barrage1 = () => import('@/components/me/infinite-rolling/barrage1').then(m => m.default || m)
+
 const navMenu = () => import('@/components/ele/navMenu').then(m => m.default || m)
 const messageBox = () => import('@/components/ele/messageBox').then(m => m.default || m)
 const forms = () => import('@/components/ele/form').then(m => m.default || m)
 const input = () => import('@/components/ele/input').then(m => m.default || m)
 const time = () => import('@/components/ele/time').then(m => m.default || m)
 const commonDia = () => import('@/components/ele/commonDia').then(m => m.default || m)
+const tabview = () => import('@/components/ele/tabview/index').then(m => m.default || m)
 
 const cellSwipe = () => import('@/components/mint/cellSwipe').then(m => m.default || m)
 
@@ -83,6 +91,8 @@ const sc1 = () => import('@/components/scss/sc1').then(m => m.default || m)
 const tooltip = () => import('@/components/uiv/tooltip').then(m => m.default || m)
 
 const vant_modal = () => import('@/components/vant/index').then(m => m.default || m)
+
+const dialog_1 = () => import('@/components/dialog_1/index').then(m => m.default || m)
 
 const passvalue = () => import('@/components/me/passValue/index').then(m => m.default || m)
 
@@ -156,8 +166,11 @@ export default new Router({
         {path:'/me/style1',name:'style1',component:style1},
         {path:'/me/style2',name:'style2',component:style2},
         {path:'/me/style3',name:'style3',component:style3},
+        {path:'/me/style4',name:'style4',component:style4},
         {path:'/me/px12',name:'px12',component:px12},
         {path:'/me/edit',name:'edit',component:edit},
+        {path:'/me/share',name:'share',component:share},
+
         {path:'/me/back_top',name:'backTop',component:backTop},
 
         {path:'comm',name:'comm',component:{template: '<router-view></router-view>'},
@@ -185,6 +198,13 @@ export default new Router({
             {path:'index',name:'index',component:passvalue},
           ]
         },
+        {path:'infinite',name:'infinite',component:{template: '<router-view></router-view>'},
+          children:[
+            {path:'index',name:'index',component:infiniteMe},
+            {path:'test',name:'test1',component:infiniteTest},
+            {path:'barrage1',name:'barrage1',component:barrage1},
+          ]
+        },
       ]
     },
 
@@ -197,6 +217,7 @@ export default new Router({
         {path:'/ele/time',name:'time',component:time},
         {path:'/ele/form',name:'ele_form',component:forms},
         {path:'/ele/dia',name:'ele_dia',component:commonDia},
+        {path:'/ele/tabview',name:'tabview',component:tabview},
       ]
     },
     {path:'/mint',name:'mint',component:{template: '<router-view></router-view>'},
@@ -218,6 +239,11 @@ export default new Router({
     {path:'/vant',name:'vant',component:{template: '<router-view></router-view>'},
       children:[
         {path:'modal',name:'modal',component:vant_modal},
+      ]
+    },
+    {path:'/dialog_1',name:'dialog_1',component:{template: '<router-view></router-view>'},
+      children:[
+        {path:'index',name:'dialog_1_index',component:dialog_1},
       ]
     },
   ]
