@@ -94,6 +94,10 @@ const dialog_1 = () => import('@/components/dialog_1/index').then(m => m.default
 
 const passvalue = () => import('@/components/me/passValue/index').then(m => m.default || m)
 
+const camera = () => import('@/components/me/camera/index').then(m => m.default || m)
+const camera2 = () => import('@/components/me/camera/index2').then(m => m.default || m)
+const camera3 = () => import('@/components/me/camera/index3').then(m => m.default || m)
+
 Vue.use(Router)
 
 export default new Router({
@@ -201,6 +205,13 @@ export default new Router({
             {path:'index',name:'index',component:infiniteMe},
             {path:'test',name:'test1',component:infiniteTest},
             {path:'barrage1',name:'barrage1',component:barrage1},
+          ]
+        },
+        {path:'camera',name:'camera',component:{template: '<router-view></router-view>'},
+          children:[
+            {path:'index1',name:'camera_index',component:camera},
+            {path:'index2',name:'camera_index2',component:camera2},
+            {path:'index3',name:'camera_index3',component:camera3},
           ]
         },
       ]

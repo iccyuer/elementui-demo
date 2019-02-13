@@ -7,6 +7,9 @@
     <div v-for="(item, index) in op.data" :key="item">
       <span>{{item}}</span>  <button @click="op.del(index)">del</button> 
     </div>
+
+    <hr>
+    <button @click="go">go</button>
   </div>
 </template>
 
@@ -47,6 +50,12 @@ export default {
       });
       obj = l;
       console.log(obj);
+    },
+    go() {
+      let a = new Date(2019, 2, 2);
+      let b = new Date(1);
+      console.log(a.getDay());
+      console.log(b);
     }
   }
 }

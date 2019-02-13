@@ -73,6 +73,11 @@ Vue.use(ConfigPlugin, {
   $layout: 'VIEW_BOX'
 })
 
+// 方便移动端调试
+import VConsole from 'vconsole';
+/* eslint-disable no-new */
+new VConsole();
+
 router.beforeEach((to, from, next) => {
   console.log(to);
   // if (to.path === '/me/auth') {

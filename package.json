@@ -12,9 +12,13 @@
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.4.6",
+    "install": "^0.12.2",
     "mint-ui": "^2.2.13",
+    "qrcode-pure": "^0.0.5",
+    "sweet-modal-vue": "^2.0.0",
     "uiv": "^0.28.0",
     "vant": "^1.5.0-beta2",
+    "vconsole": "^3.3.0",
     "vue": "^2.5.2",
     "vue-cropper": "^0.4.6",
     "vue-infinite-loading": "^2.3.3",
