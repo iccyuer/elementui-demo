@@ -28,6 +28,10 @@ export default {
             if (index !== idx) l.push(val)
           });
           this.data = l;
+          this.hehe();
+        },
+        hehe() {
+          console.log('hehe');
         }
       }
     }

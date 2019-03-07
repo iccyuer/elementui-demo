@@ -79,6 +79,8 @@ const barrage1 = () => import('@/components/me/infinite-rolling/barrage1').then(
 const navMenu = () => import('@/components/ele/navMenu').then(m => m.default || m)
 const messageBox = () => import('@/components/ele/messageBox').then(m => m.default || m)
 const forms = () => import('@/components/ele/form').then(m => m.default || m)
+const input = () => import('@/components/ele/input').then(m => m.default || m)
+const time = () => import('@/components/ele/time').then(m => m.default || m)
 const commonDia = () => import('@/components/ele/commonDia').then(m => m.default || m)
 const tabview = () => import('@/components/ele/tabview/index').then(m => m.default || m)
 // const switch = () => import('@/components/ele/switch').then(m => m.default || m)
@@ -240,6 +242,9 @@ export default new Router({
       children:[
         {path:'/ele/navmenu',name:'navMenu',component:navMenu},
         {path:'/ele/messagebox',name:'messageBox',component:messageBox},
+        {path:'/ele/form',name:'form',component:forms},
+        {path:'/ele/input',name:'input',component:input},
+        {path:'/ele/time',name:'time',component:time},
         {path:'/ele/form',name:'ele_form',component:forms},
         {path:'/ele/dia',name:'ele_dia',component:commonDia},
         {path:'/ele/tabview',name:'tabview',component:tabview},

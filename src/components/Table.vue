@@ -2,7 +2,8 @@
     <div>
         <el-table
         :data="tableData"
-        style="width: 100%">
+        style="width: 100%"
+        @row-click="addressSelect">
             <el-table-column
                 :prop="hehe"
                 label="日期"
@@ -29,7 +30,8 @@
 
             <template v-for="val in list">
               <el-table-column
-                  :prop="val.prop">
+                  :prop="val.prop"
+                  >
               </el-table-column>
             </template>
             
@@ -76,6 +78,11 @@ export default {
   methods:{
     go(){
       this.$router.push({path:'/'})
+    },
+    addressSelect(row, event, column){
+      console.log('row',row);
+      console.log('event',event);
+      console.log('column',column);
     }
   }
 };
