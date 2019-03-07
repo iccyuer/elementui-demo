@@ -81,6 +81,7 @@ const messageBox = () => import('@/components/ele/messageBox').then(m => m.defau
 const forms = () => import('@/components/ele/form').then(m => m.default || m)
 const commonDia = () => import('@/components/ele/commonDia').then(m => m.default || m)
 const tabview = () => import('@/components/ele/tabview/index').then(m => m.default || m)
+// const switch = () => import('@/components/ele/switch').then(m => m.default || m)
 
 const cellSwipe = () => import('@/components/mint/cellSwipe').then(m => m.default || m)
 
@@ -97,6 +98,12 @@ const passvalue = () => import('@/components/me/passValue/index').then(m => m.de
 const camera = () => import('@/components/me/camera/index').then(m => m.default || m)
 const camera2 = () => import('@/components/me/camera/index2').then(m => m.default || m)
 const camera3 = () => import('@/components/me/camera/index3').then(m => m.default || m)
+
+const bug_ios = () => import('@/components/me/bug/ios').then(m => m.default || m)
+
+const promise_1 = () => import('@/components/me/promise/index').then(m => m.default || m)
+const promise_2 = () => import('@/components/me/promise/index2').then(m => m.default || m)
+const promise_3 = () => import('@/components/me/promise/index3').then(m => m.default || m)
 
 Vue.use(Router)
 
@@ -214,6 +221,18 @@ export default new Router({
             {path:'index3',name:'camera_index3',component:camera3},
           ]
         },
+        {path:'bug',name:'bug',component:{template: '<router-view></router-view>'},
+          children:[
+            {path:'bug_ios',name:'bug_ios',component:bug_ios},
+          ]
+        },
+        {path:'promise',name:'promise',component:{template: '<router-view></router-view>'},
+          children:[
+            {path:'index1',name:'promise_1',component:promise_1},
+            {path:'index2',name:'promise_2',component:promise_2},
+            {path:'index3',name:'promise_3',component:promise_3},
+          ]
+        },
       ]
     },
 
@@ -224,6 +243,7 @@ export default new Router({
         {path:'/ele/form',name:'ele_form',component:forms},
         {path:'/ele/dia',name:'ele_dia',component:commonDia},
         {path:'/ele/tabview',name:'tabview',component:tabview},
+        // {path:'/ele/switch',name:'switch',component:switch},
       ]
     },
     {path:'/mint',name:'mint',component:{template: '<router-view></router-view>'},

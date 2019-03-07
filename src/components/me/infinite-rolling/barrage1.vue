@@ -20,10 +20,10 @@ methods: {
         console.log(this); 
         console.log(this.name); 
       },
-      boot2: (() => {
+      boot2: () => {
         console.log(this); 
         console.log(this.name); 
-      })
+      }
     }
     entity.boot();
     entity.boot2();

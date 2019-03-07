@@ -2,7 +2,9 @@
   <div>
     <button @click="openCamera = true">open</button>
     <p>{{qrResult}}</p>
-    <qrcode-stream :camera="constraints" @decode="onDecode" @init="onInit" v-if="openCamera"></qrcode-stream>
+    <div class="box" v-if="openCamera">
+      <qrcode-stream :camera="constraints" @decode="onDecode" @init="onInit" v-if="openCamera" :paused="status" style="width:100%; height:100%;"></qrcode-stream>
+    </div>
   </div>
 </template>
 
@@ -12,16 +14,19 @@ export default {
   data() {
     return {
       qrResult: "",
-      openCamera: false,
+      openCamera: true,
       // 约束
       constraints: {
         audio: false, // don't request microphone access
         // video: {
         facingMode: { exact: "environment" }, // use rear camera if available
-        width: { min: 360, ideal: 680, max: 1920 }, // constrain video width resolution
-        height: { min: 240, ideal: 480, max: 1080 } // constrain video height resolution
+        // width: { min: 360, ideal: 680, max: 1920 }, // constrain video width resolution
+        // height: { min: 240, ideal: 480, max: 1080 } // constrain video height resolution
+        height: document.body.clientWidth,
+        width: document.body.clientHeight
         // }
-      }
+      },
+      status: false
     };
   },
   components: {
@@ -31,10 +36,15 @@ export default {
     // 解码
     onDecode(decodedString) {
       this.qrResult = decodedString;
+      // this.status = true;
+      // setTimeout(() => {
+      //   this.status = false;
+      // }, 100);
       alert(decodedString);
-      if (this.checkURL(decodedString)) {
-        location.href = decodedString;
-      }
+      this.openCamera = false;
+      // if (this.checkURL(decodedString)) {
+      //   location.href = decodedString;
+      // }
     },
     // 初始化
     async onInit(promise) {
@@ -86,5 +96,13 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+  .box{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
 </style>
