@@ -55,6 +55,10 @@ Vue.component(Child.name,Child);
 import scroll from 'vue-seamless-scroll'
 Vue.use(scroll)
 
+import Highcharts from 'highcharts';
+import VueHighcharts from 'vue-highcharts';
+Vue.use(VueHighcharts,  Highcharts );
+
 // meta
 import Meta from 'vue-meta'
 Vue.use(Meta, {

@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.4.6",
+    "highcharts": "^7.0.3",
     "install": "^0.12.2",
     "mint-ui": "^2.2.13",
     "qrcode-pure": "^0.0.5",
@@ -21,6 +22,7 @@
     "vconsole": "^3.3.0",
     "vue": "^2.5.2",
     "vue-cropper": "^0.4.6",
+    "vue-highcharts": "^0.1.0",
     "vue-infinite-loading": "^2.3.3",
     "vue-meta": "^1.5.6",
     "vue-resource": "^1.5.1",

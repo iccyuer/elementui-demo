@@ -107,6 +107,8 @@ const promise_1 = () => import('@/components/me/promise/index').then(m => m.defa
 const promise_2 = () => import('@/components/me/promise/index2').then(m => m.default || m)
 const promise_3 = () => import('@/components/me/promise/index3').then(m => m.default || m)
 
+const highcharts_1 = () => import('@/components/me/highcharts/index').then(m => m.default || m)
+
 Vue.use(Router)
 
 export default new Router({
@@ -233,6 +235,11 @@ export default new Router({
             {path:'index1',name:'promise_1',component:promise_1},
             {path:'index2',name:'promise_2',component:promise_2},
             {path:'index3',name:'promise_3',component:promise_3},
+          ]
+        },
+        {path:'highcharts',name:'highcharts',component:{template: '<router-view></router-view>'},
+          children:[
+            {path:'index1',name:'highcharts_1',component:highcharts_1},
           ]
         },
       ]
