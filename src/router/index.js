@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import op from './op'
 import HelloWorld from '@/components/HelloWorld'
 import Table from '@/components/Table'
 import Table2 from '@/components/Table2'
@@ -120,6 +121,7 @@ export default new Router({
     //   name: 'HelloWorld',
     //   component: HelloWorld
     // }
+    op,
     {path:'/',redirect: '/table'},
     {path:'/table',name:'Table',component:Table},
     {path:'/table2',name:'Table2',component:Table2},

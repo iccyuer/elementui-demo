@@ -7,6 +7,8 @@ import axios from 'axios'
 import store from './components/store/store'
 import './permission'
 
+// mock
+import './mock'
 
 import Child from './components/Slot';
 import Child2 from './components/Slot2';

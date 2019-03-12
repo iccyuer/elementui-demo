@@ -15,6 +15,7 @@
     "highcharts": "^7.0.3",
     "install": "^0.12.2",
     "mint-ui": "^2.2.13",
+    "mockjs": "^1.0.1-beta3",
     "qrcode-pure": "^0.0.5",
     "sweet-modal-vue": "^2.0.0",
     "uiv": "^0.28.0",
