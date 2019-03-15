@@ -31,8 +31,8 @@ export default {
     console.log('coo-mounted', this)
     this.$emit('coo-mounted')
     // this.$root.$on('defaultB', this.defaultA())
-    console.log(GLOBAL.vbus)
-    GLOBAL.vbus.$on('defaultB', this.defaultA())
+    // console.log(GLOBAL.vbus)
+    // GLOBAL.vbus.$on('defaultB', this.defaultA())
   },
   destroyed() {
     console.log('coo-destroyed')

@@ -5,6 +5,7 @@
     :beforeClick="beforeClick" 
     :afterClick="afterClick"
     :list="listData"
+    :hehe="hehe"
     ref="cookie">
       <!-- <coo ref="coo" :initConfig="init" slot-scope="data" @coo-mounted="coo-mounted"></coo> -->
       <coo1 ref="coo1"></coo1>
@@ -22,7 +23,10 @@ export default {
   },
   data() {
     return {
-      listData: [1, 2, 3, 4]
+      listData: [1, 2, 3, 4],
+      hehe: {
+        name: 'a'
+      }
     }
   },
   methods:{

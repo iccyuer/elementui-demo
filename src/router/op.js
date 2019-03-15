@@ -14,5 +14,15 @@ export default {
         {path: 'index', name: 'mo_index1', component: () => import('@/views/mock/index')}
       ]
     },
+    {path: 'slot',name:'slot',component: {template: '<router-view></router-view>'},
+      children: [
+        {path: 'index', name: 'sl_index1', component: () => import('@/views/slot/index')}
+      ]
+    },
+    {path: 'jsx',name:'jsx',component: {template: '<router-view></router-view>'},
+      children: [
+        {path: 'index', name: 'jsx_index1', component: () => import('@/views/jsx/index')}
+      ]
+    },
   ]
 }

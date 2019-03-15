@@ -10,6 +10,7 @@
         :visible.sync="show"
         width="30%">
         <span>{{list}}</span>
+        <el-input v-model="hehe.name" placeholder="请输入内容"></el-input>
         <button @click="changeList">changeList</button>
         <slot :todo="show"></slot>
         <span slot="footer" class="dialog-footer">
@@ -33,6 +34,10 @@ export default {
     list: {
       type: Array,
       default: []
+    },
+    hehe: {
+      type: Object,
+      default: ''
     },
     beforeClick: {
       type: Function,

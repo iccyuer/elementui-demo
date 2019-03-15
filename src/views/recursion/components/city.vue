@@ -1,12 +1,12 @@
 <template>
   <div class="city">
-    <!-- <template v-for="(city, index) in cities">
-      <ul>{{city.name}}
+    <template v-for="(city, index) in cities">
+      <ul>{{city.name}}--{{city.$index}}
         <li v-if="city.child">
           <city :cities="city.child"></city>
         </li>
       </ul>
-    </template> -->
+    </template>
     <!-- <a v-bind="{ href: 'http://www.baidu.com',target: '_blank',rel: 'noopener' }">baidu</a> -->
   </div>
 </template>
@@ -25,6 +25,6 @@ export default {
 
 <style lang="scss">
   .city{
-
+    font-size: 20px;
   }
 </style>
