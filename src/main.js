@@ -6,6 +6,10 @@ import router from './router'
 import axios from 'axios'
 import store from './components/store/store'
 import './permission'
+// import './global'
+import components from './global'
+console.log('components', components);
+Vue.use(components)
 
 // mock
 import './mock'

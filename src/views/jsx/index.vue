@@ -3,6 +3,7 @@
     <title-template :level="2">啦啦啦😋</title-template>
     <title-render :level="3">啦啦啦😋</title-render>
     <font >click me</font>
+    <input type="text" placeholder="please enter" v-focus>
   </div>
 </template>
 

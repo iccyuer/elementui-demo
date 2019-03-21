@@ -1,6 +1,7 @@
 <template>
   <div>
     <city :cities="cities">></city>
+    <button @click="go">go</button>
   </div>
 </template>
 
@@ -36,6 +37,29 @@ export default {
           name: '天津'
         }
       ]
+    }
+  },
+  methods: {
+    go() {
+      var arr = ['五',4,3,'叁',9];
+      var newArr = []
+      arr.forEach(function(item) {
+        switch (item) {
+          case 4:
+            newArr.push('四')
+            break;
+          case 3:
+            newArr.push('三')
+            break;
+          case 9:
+            newArr.push('九')
+            break;
+          default:
+          newArr.push(item);
+        }
+      })
+      console.log(newArr)
+      return newArr;
     }
   }
 }
