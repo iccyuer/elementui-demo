@@ -17,10 +17,20 @@ export default {
   directives: {
     focus
   },
+  data() {
+    return {
+      num: 0
+    }
+  },
   created() {
     this.mockTest();
+    // this.timingTask();
   },
   methods: {
+    timingTask(val) {
+      console.log('di', val);
+      setTimeout(this.timingTask(new Date()), 1000);
+    },
     mockTest() {
       axios.get('/hehe', { params: {}})
         .then(res => {

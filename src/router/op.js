@@ -24,5 +24,10 @@ export default {
         {path: 'index', name: 'jsx_index1', component: () => import('@/views/jsx/index')}
       ]
     },
+    {path: 'animation',name:'animation',component: {template: '<router-view></router-view>'},
+      children: [
+        {path: 'index', name: 'animation_index1', component: () => import('@/views/animation/index')}
+      ]
+    },
   ]
 }
