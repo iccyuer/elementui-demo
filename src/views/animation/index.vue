@@ -3,6 +3,14 @@
     <button @click="animated">animated</button>
     <div class="box" @update:list="val => listData = val"></div>
     <!-- <div>--{{total}}--</div> -->
+    <el-dropdown @command="handleCommand">
+      <span class="el-dropdown-link">
+        下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+      </span>
+      <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item :command="item.id" v-for="(item, index) in list" :key="index">{{item.title}}</el-dropdown-item>
+      </el-dropdown-menu>
+    </el-dropdown>
   </div>
 </template>
 
@@ -10,7 +18,12 @@
 export default {
   data() {
     return {
-      index: 0
+      index: 0,
+      list: [
+        { id: 1, title: '(*@ο@*) 哇～' },
+        { id: 3, title: '\(^o^)/~' },
+        { id: 99, title: 'O__O "…' },
+      ]
     }
   },
   computed: {
@@ -37,6 +50,9 @@ export default {
       console.log(this.$options.data().index)
       console.log(this.$options)
       console.log(this.$options.computed.op())
+    },
+    handleCommand(id) {
+      console.log(id)
     }
   }
 }

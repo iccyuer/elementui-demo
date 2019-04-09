@@ -29,5 +29,10 @@ export default {
         {path: 'index', name: 'animation_index1', component: () => import('@/views/animation/index')}
       ]
     },
+    {path: 'lbs',name:'lbs',component: {template: '<router-view></router-view>'},
+      children: [
+        {path: 'index', name: 'lbs_index1', component: () => import('@/views/lbs/index')}
+      ]
+    },
   ]
 }
