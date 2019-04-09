@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2>12</h2>
+    <h1></h1>
   </div>
 </template>
 
