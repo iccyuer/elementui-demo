@@ -34,7 +34,7 @@ export default {
     mockTest() {
       axios.get('/hehe', { params: {}})
         .then(res => {
-          console.log(res);
+          console.log('!@#', res);
         })
     }
   }

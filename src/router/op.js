@@ -26,12 +26,28 @@ export default {
     },
     {path: 'animation',name:'animation',component: {template: '<router-view></router-view>'},
       children: [
-        {path: 'index', name: 'animation_index1', component: () => import('@/views/animation/index')}
+        {path: 'index', name: 'animation_index1', component: () => import('@/views/animation/index')},
+        {path: 'index2', name: 'animation_index2', component: () => import('@/views/animation/index2')}
       ]
     },
     {path: 'lbs',name:'lbs',component: {template: '<router-view></router-view>'},
       children: [
         {path: 'index', name: 'lbs_index1', component: () => import('@/views/lbs/index')}
+      ]
+    },
+    {path: 'user',name:'user',component: {template: '<router-view></router-view>'},
+      children: [
+        {path: 'index', name: 'user_index1', component: () => import('@/views/user/index')}
+      ]
+    },
+    {path: 'fetch',name:'fetch',component: {template: '<router-view></router-view>'},
+      children: [
+        {path: 'index', name: 'fetch_index1', component: () => import('@/views/fetch/index')}
+      ]
+    },
+    {path: 'wechat',name:'wechat',component: {template: '<router-view></router-view>'},
+      children: [
+        {path: 'index', name: 'wechat_index1', component: () => import('@/views/wechat/index')}
       ]
     },
   ]

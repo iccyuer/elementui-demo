@@ -66,14 +66,41 @@ export default {
       width: 100px;
       height: 100px;
       border-radius: 50%;
+      position: relative;
+      left: 0;
       background-color: red;
       display: inline-block;
+      transition: 2s all cubic-bezier(1,-0.39,.36,1.44);
     }
     .box:hover{
-      transition: cubic-bezier(0.175, 0.885, 0.32, 1000);
-      position: relative;
-      top: 10px;
-      left: 10px;
+      // top: 10px;
+      left: 100px;
+      transform: rotate(2880deg);
     }
+
+    // .box{
+    //   width: 35px;
+    //   height: 35px;
+    //   line-height: 35px;
+    //   position: relative;
+    //   -webkit-border-radius: 100%;
+    //   -moz-border-radius: 100%;
+    //   border-radius: 100%;
+    //   background: #f07709;
+    //   color: #fff;
+    //   text-align: center;
+    //   font-family: Georgia;
+    //   z-index: 1;
+    //   left: 0;
+    //   transition: 1.5s all cubic-bezier(1,-0.39,.36,1.44) 0.2s;
+    // }
+    // .box:hover{
+    //   left: 365px;
+    //   -webkit-transform: rotate(2880deg);
+    //   -moz-transform: rotate(2880deg);
+    //   -o-transform: rotate(2880deg);
+    //   -ms-transform: rotate(2880deg);
+    //   transform: rotate(2880deg);
+    // }
   }
 </style>
