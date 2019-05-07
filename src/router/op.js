@@ -47,7 +47,13 @@ export default {
     },
     {path: 'wechat',name:'wechat',component: {template: '<router-view></router-view>'},
       children: [
-        {path: 'index', name: 'wechat_index1', component: () => import('@/views/wechat/index')}
+        {path: 'index', name: 'wechat_index1', component: () => import('@/views/wechat/index')},
+        {path: 'index2', name: 'wechat_index2', component: () => import('@/views/wechat/index2')}
+      ]
+    },
+    {path: 'upload',name:'upload',component: {template: '<router-view></router-view>'},
+      children: [
+        {path: 'index', name: 'upload_index1', component: () => import('@/views/upload/index')}
       ]
     },
   ]
