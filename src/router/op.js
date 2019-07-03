@@ -56,5 +56,10 @@ export default {
         {path: 'index', name: 'upload_index1', component: () => import('@/views/upload/index')}
       ]
     },
+    {path: 'flex',name:'flex',component: {template: '<router-view></router-view>'},
+      children: [
+        {path: 'index', name: 'flex_index1', component: () => import('@/views/flex/index')}
+      ]
+    },
   ]
 }

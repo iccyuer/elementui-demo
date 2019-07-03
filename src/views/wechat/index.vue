@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2>wechat share</h2>
+    <button @click="scanQrcode">scan</button>
   </div>
 </template>
 
@@ -23,9 +24,11 @@ export default {
   },
   methods: {
     fetchSignature() {
-      http.get('http://192.168.10.76:3000/dashi/wechat/get_web_signature', {
+      http.get('http://192.168.10.153:8086/dashi/wechat/get_web_signature', {
         params: {
-          url: location.href.split('#')[0]
+          url: location.href.split('#')[0],
+          // url: 'https://open.weixin.qq.com/connect/oauth2/authorize'
+          // url: 'http://192.168.10.153:8086/op/wechat/index2'
         }
       }).then(res => {
         let { status, data } = res.data
@@ -42,7 +45,9 @@ export default {
       })
     },
     config() {
-      let link = `${location.origin}/heheheh/adsasds?dsd`;
+      // let link = `${location.origin}/heheheh/adsasds?dsd`;
+      let link = `http://192.168.10.153:8086/dashi/wechat/redirect?redirect_url=http://192.168.10.194:8086/op/wechat/index2`;
+      // let link = 'https://open.weixin.qq.com/connect/oauth2/authorize';
       let title = '💝💓💟';
       let desc = ' ♥ ♦ ♡ ❤ ❥ ♥ ❣ ღ ♥';
       let imgUrl = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557147864081&di=16a089bbbc755ac09a7be13d93655971&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20181119%2Fcb1ec8ae14034c039a34b6233d2b24cd.jpeg';
@@ -52,7 +57,7 @@ export default {
         timestamp: this.timestamp, // 必填，生成签名的时间戳
         nonceStr: this.nonceStr, // 必填，生成签名的随机串
         signature: this.signature,// 必填，签名
-        jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline'] // 必填，需要使用的JS接口列表
+        jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline', 'scanQRCode'] // 必填，需要使用的JS接口列表
       });
       wx.ready(() => {
         // 分享到朋友圈
@@ -81,6 +86,16 @@ export default {
             console.log('分享朋友失败');
           }
         });
+      });
+    },
+    scanQrcode() {
+      wx.scanQRCode({
+      needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+      scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+      success: function (res) {
+        var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+        alert(result)
+      }
       });
     }
   }

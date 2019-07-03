@@ -33,7 +33,9 @@ export default {
     open() {
       this.$refs['cookie'].handleOpen()
       // this.$refs['coo'].defaultA()
-      // this.$refs['coo1'].defaultA()
+      this.$nextTick().then(() => {
+        this.$refs['coo1'].defaultA()
+      })
       // this.$root.$emit('defaultB')
       // GLOBAL.vbus.$emit('defaultB')
       // console.log(GLOBAL.vbus)
